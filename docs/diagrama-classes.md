@@ -3,45 +3,45 @@
 ```mermaid
 classDiagram
     class Paciente {
-        +String nome
-        +String cpf
-        +LocalDate dataNascimento
-        +String telefone
-        +String endereco
-        +String email
+        -String nome
+        -String cpf
+        -LocalDate dataNascimento
+        -String telefone
+        -String endereco
+        -String email
     }
 
     class ProfissionalSaude {
-        +String nome
-        +String registroProfissional
-        +String especialidade
-        +String telefone
-        +String email
+        -String nome
+        -String registroProfissional
+        -String especialidade
+        -String telefone
+        -String email
     }
 
     class Consulta {
-        +LocalDate data
-        +LocalTime horario
-        +String motivo
-        +String observacoesMedicas
+        -LocalDate data
+        -LocalTime horario
+        -String motivo
+        -String observacoesMedicas
     }
 
     class Internacao {
-        +LocalDate dataEntrada
-        +LocalDate dataPrevistaAlta
-        +LocalDate dataEfetivaAlta
-        +String observacoes
+        -LocalDate dataEntrada
+        -LocalDate dataPrevistaAlta
+        -LocalDate dataEfetivaAlta
+        -String observacoes
     }
 
     class Quarto {
-        +String numeroIdentificacao
-        +int andar
-        +int capacidadeMaxima
-        +String situacaoAtual
+        -String numeroIdentificacao
+        -int andar
+        -int capacidadeMaxima
+        -String situacaoAtual
     }
 
     class HistoricoMedico {
-        +Paciente paciente
+        -Paciente paciente
     }
 
     Paciente "1" --> "0..*" Consulta
@@ -58,4 +58,4 @@ classDiagram
 
 ## Observação
 
-Este diagrama representa a modelagem inicial prevista para a Sprint 1. As classes e relacionamentos poderão evoluir nas próximas etapas do projeto.
+Modelagem inicial da Sprint 1. Métodos e detalhes das próximas camadas ainda não foram incluídos.
