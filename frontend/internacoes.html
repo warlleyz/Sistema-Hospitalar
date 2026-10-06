@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internações - Sistema Hospitalar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema Hospitalar</h1>
+        <p>Protótipo inicial - Sprint 1</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="profissionais.html">Profissionais</a>
+        <a href="consultas.html">Consultas</a>
+        <a href="internacoes.html">Internações</a>
+        <a href="#">Quartos</a>
+        <a href="#">Histórico</a>
+    </nav>
+
+    <main>
+        <h2>Internações</h2>
+        <p>Registro e visualização inicial das internações.</p>
+
+        <section class="panel">
+            <h3>Nova internação</h3>
+            <form>
+                <label>Paciente</label>
+                <select>
+                    <option>Selecione um paciente</option>
+                    <option>João Silva</option>
+                    <option>Maria Souza</option>
+                </select>
+
+                <label>Profissional responsável</label>
+                <select>
+                    <option>Selecione um profissional</option>
+                    <option>Ana Costa</option>
+                    <option>Carlos Lima</option>
+                </select>
+
+                <label>Quarto</label>
+                <input type="text" placeholder="Número do quarto">
+
+                <label>Data de entrada</label>
+                <input type="date">
+
+                <label>Data prevista de alta</label>
+                <input type="date">
+
+                <label>Observações</label>
+                <textarea rows="4" placeholder="Observações"></textarea>
+
+                <button type="button">Registrar</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h3>Internações atuais</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Profissional</th>
+                        <th>Quarto</th>
+                        <th>Entrada</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>Ana Costa</td>
+                        <td>201</td>
+                        <td>05/10/2026</td>
+                        <td>Internado</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Souza</td>
+                        <td>Carlos Lima</td>
+                        <td>104</td>
+                        <td>02/10/2026</td>
+                        <td>Alta prevista</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -75,10 +75,13 @@ form {
     gap: 8px;
 }
 
-input {
+input,
+select,
+textarea {
     padding: 8px;
     margin-bottom: 8px;
     border: 1px solid #cccccc;
+    font-family: Arial, sans-serif;
 }
 
 button {
