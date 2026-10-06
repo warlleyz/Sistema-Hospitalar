@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico Médico - Sistema Hospitalar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema Hospitalar</h1>
+        <p>Protótipo inicial - Sprint 1</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="profissionais.html">Profissionais</a>
+        <a href="consultas.html">Consultas</a>
+        <a href="internacoes.html">Internações</a>
+        <a href="quartos.html">Quartos</a>
+        <a href="historico.html">Histórico</a>
+    </nav>
+
+    <main>
+        <h2>Histórico Médico</h2>
+        <p>Consulta visual do histórico de atendimentos de um paciente.</p>
+
+        <section class="panel">
+            <h3>Selecionar paciente</h3>
+            <form>
+                <label>Paciente</label>
+                <select>
+                    <option>João Silva</option>
+                    <option>Maria Souza</option>
+                </select>
+
+                <button type="button">Consultar</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h3>Histórico de João Silva</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                        <th>Profissional</th>
+                        <th>Informação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Consulta</td>
+                        <td>20/09/2026</td>
+                        <td>Ana Costa</td>
+                        <td>Consulta clínica</td>
+                    </tr>
+                    <tr>
+                        <td>Internação</td>
+                        <td>05/10/2026</td>
+                        <td>Ana Costa</td>
+                        <td>Quarto 201</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
