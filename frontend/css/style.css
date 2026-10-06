@@ -37,3 +37,26 @@ nav a {
 main {
     padding: 30px 20px;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.card {
+    width: 200px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+}
