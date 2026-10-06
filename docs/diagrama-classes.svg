@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <style>
+    .title { font: 700 34px Arial, sans-serif; fill: #1f2937; }
+    .subtitle { font: 18px Arial, sans-serif; fill: #4b5563; }
+    .box { fill: #ffffff; stroke: #374151; stroke-width: 2; rx: 8; }
+    .head { fill: #e5e7eb; stroke: #374151; stroke-width: 2; }
+    .class-name { font: 700 20px Arial, sans-serif; fill: #111827; text-anchor: middle; }
+    .attr { font: 15px Arial, sans-serif; fill: #111827; }
+    .line { stroke: #4b5563; stroke-width: 2; fill: none; }
+    .mult { font: 14px Arial, sans-serif; fill: #111827; }
+    .note { font: 15px Arial, sans-serif; fill: #4b5563; }
+  </style>
+
+  <rect width="1600" height="1050" fill="#f9fafb"/>
+  <text x="800" y="50" class="title" text-anchor="middle">Sistema Hospitalar — Diagrama de Classes</text>
+  <text x="800" y="82" class="subtitle" text-anchor="middle">Modelagem inicial — Sprint 1</text>
+
+  <!-- Paciente -->
+  <rect x="80" y="150" width="360" height="250" class="box"/>
+  <rect x="80" y="150" width="360" height="48" class="head"/>
+  <text x="260" y="181" class="class-name">Paciente</text>
+  <text x="100" y="225" class="attr">+ nome: String</text>
+  <text x="100" y="252" class="attr">+ cpf: String</text>
+  <text x="100" y="279" class="attr">+ dataNascimento: LocalDate</text>
+  <text x="100" y="306" class="attr">+ telefone: String</text>
+  <text x="100" y="333" class="attr">+ endereco: String</text>
+  <text x="100" y="360" class="attr">+ email: String</text>
+
+  <!-- Profissional -->
+  <rect x="1160" y="150" width="360" height="225" class="box"/>
+  <rect x="1160" y="150" width="360" height="48" class="head"/>
+  <text x="1340" y="181" class="class-name">ProfissionalSaude</text>
+  <text x="1180" y="225" class="attr">+ nome: String</text>
+  <text x="1180" y="252" class="attr">+ registroProfissional: String</text>
+  <text x="1180" y="279" class="attr">+ especialidade: String</text>
+  <text x="1180" y="306" class="attr">+ telefone: String</text>
+  <text x="1180" y="333" class="attr">+ email: String</text>
+
+  <!-- Consulta -->
+  <rect x="620" y="160" width="360" height="200" class="box"/>
+  <rect x="620" y="160" width="360" height="48" class="head"/>
+  <text x="800" y="191" class="class-name">Consulta</text>
+  <text x="640" y="235" class="attr">+ data: LocalDate</text>
+  <text x="640" y="262" class="attr">+ horario: LocalTime</text>
+  <text x="640" y="289" class="attr">+ motivo: String</text>
+  <text x="640" y="316" class="attr">+ observacoesMedicas: String</text>
+
+  <!-- Internacao -->
+  <rect x="620" y="510" width="360" height="220" class="box"/>
+  <rect x="620" y="510" width="360" height="48" class="head"/>
+  <text x="800" y="541" class="class-name">Internacao</text>
+  <text x="640" y="585" class="attr">+ dataEntrada: LocalDate</text>
+  <text x="640" y="612" class="attr">+ dataPrevistaAlta: LocalDate</text>
+  <text x="640" y="639" class="attr">+ dataEfetivaAlta: LocalDate</text>
+  <text x="640" y="666" class="attr">+ observacoes: String</text>
+
+  <!-- Quarto -->
+  <rect x="1160" y="540" width="360" height="205" class="box"/>
+  <rect x="1160" y="540" width="360" height="48" class="head"/>
+  <text x="1340" y="571" class="class-name">Quarto</text>
+  <text x="1180" y="615" class="attr">+ numeroIdentificacao: String</text>
+  <text x="1180" y="642" class="attr">+ andar: int</text>
+  <text x="1180" y="669" class="attr">+ capacidadeMaxima: int</text>
+  <text x="1180" y="696" class="attr">+ situacaoAtual: String</text>
+
+  <!-- Historico -->
+  <rect x="80" y="560" width="360" height="120" class="box"/>
+  <rect x="80" y="560" width="360" height="48" class="head"/>
+  <text x="260" y="591" class="class-name">HistoricoMedico</text>
+  <text x="100" y="635" class="attr">+ paciente: Paciente</text>
+
+  <!-- Relacionamentos Consulta -->
+  <line x1="440" y1="265" x2="620" y2="265" class="line"/>
+  <text x="455" y="252" class="mult">1</text>
+  <text x="575" y="252" class="mult">0..*</text>
+
+  <line x1="980" y1="265" x2="1160" y2="265" class="line"/>
+  <text x="995" y="252" class="mult">0..*</text>
+  <text x="1135" y="252" class="mult">1</text>
+
+  <!-- Relacionamentos Internacao -->
+  <path d="M 380 400 L 380 620 L 620 620" class="line"/>
+  <text x="395" y="425" class="mult">1</text>
+  <text x="575" y="607" class="mult">0..*</text>
+
+  <path d="M 1220 375 L 1220 460 L 980 620" class="line"/>
+  <text x="1200" y="400" class="mult">1</text>
+  <text x="990" y="607" class="mult">0..*</text>
+
+  <line x1="980" y1="645" x2="1160" y2="645" class="line"/>
+  <text x="995" y="632" class="mult">0..*</text>
+  <text x="1138" y="632" class="mult">1</text>
+
+  <!-- Paciente-Historico -->
+  <line x1="260" y1="400" x2="260" y2="560" class="line"/>
+  <text x="275" y="430" class="mult">1</text>
+  <text x="275" y="545" class="mult">1</text>
+
+  <!-- Historico-Consulta -->
+  <path d="M 440 585 L 530 585 L 530 350 L 620 350" class="line"/>
+  <text x="455" y="572" class="mult">1</text>
+  <text x="575" y="337" class="mult">0..*</text>
+
+  <!-- Historico-Internacao -->
+  <line x1="440" y1="640" x2="620" y2="640" class="line"/>
+  <text x="455" y="627" class="mult">1</text>
+  <text x="575" y="627" class="mult">0..*</text>
+
+  <text x="80" y="990" class="note">Sprint 1: diagrama inicial baseado nos requisitos do trabalho. Métodos e camadas serão definidos nas próximas etapas.</text>
+</svg>
