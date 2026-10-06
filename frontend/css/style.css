@@ -60,3 +60,41 @@ main {
 .card p {
     margin-bottom: 0;
 }
+
+.panel {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+form {
+    display: grid;
+    max-width: 500px;
+    gap: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #cccccc;
+}
+
+button {
+    width: 120px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}

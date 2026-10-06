@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - Sistema Hospitalar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema Hospitalar</h1>
+        <p>Protótipo inicial - Sprint 1</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="pacientes.html">Pacientes</a>
+        <a href="profissionais.html">Profissionais</a>
+        <a href="#">Consultas</a>
+        <a href="#">Internações</a>
+        <a href="#">Quartos</a>
+        <a href="#">Histórico</a>
+    </nav>
+
+    <main>
+        <h2>Pacientes</h2>
+        <p>Cadastro e visualização inicial de pacientes.</p>
+
+        <section class="panel">
+            <h3>Novo paciente</h3>
+            <form>
+                <label>Nome</label>
+                <input type="text" placeholder="Nome completo">
+
+                <label>CPF</label>
+                <input type="text" placeholder="000.000.000-00">
+
+                <label>Data de nascimento</label>
+                <input type="date">
+
+                <label>Telefone</label>
+                <input type="text" placeholder="(00) 00000-0000">
+
+                <label>Endereço</label>
+                <input type="text" placeholder="Endereço">
+
+                <label>E-mail</label>
+                <input type="email" placeholder="email@exemplo.com">
+
+                <button type="button">Cadastrar</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h3>Pacientes cadastrados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>123.456.789-00</td>
+                        <td>(31) 99999-1111</td>
+                        <td>joao@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Souza</td>
+                        <td>987.654.321-00</td>
+                        <td>(31) 98888-2222</td>
+                        <td>maria@email.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
