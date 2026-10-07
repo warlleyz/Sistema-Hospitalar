@@ -29,54 +29,56 @@
         <section class="panel">
             <h3>Novo paciente</h3>
             <form>
-                <label>Nome</label>
-                <input type="text" placeholder="Nome completo">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Nome completo">
 
-                <label>CPF</label>
-                <input type="text" placeholder="000.000.000-00">
+                <label for="cpf">CPF</label>
+                <input id="cpf" type="text" placeholder="000.000.000-00">
 
-                <label>Data de nascimento</label>
-                <input type="date">
+                <label for="data-de-nascimento">Data de nascimento</label>
+                <input id="data-de-nascimento" type="date">
 
-                <label>Telefone</label>
-                <input type="text" placeholder="(00) 00000-0000">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="text" placeholder="(00) 00000-0000">
 
-                <label>Endereço</label>
-                <input type="text" placeholder="Endereço">
+                <label for="endereco">Endereço</label>
+                <input id="endereco" type="text" placeholder="Endereço">
 
-                <label>E-mail</label>
-                <input type="email" placeholder="email@exemplo.com">
+                <label for="e-mail">E-mail</label>
+                <input id="e-mail" type="email" placeholder="email@exemplo.com">
 
-                <button type="button">Cadastrar</button>
+                <button type="button" disabled>Cadastrar</button>
             </form>
         </section>
 
         <section class="panel">
             <h3>Pacientes cadastrados</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>CPF</th>
-                        <th>Telefone</th>
-                        <th>E-mail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>João Silva</td>
-                        <td>123.456.789-00</td>
-                        <td>(31) 99999-1111</td>
-                        <td>joao@email.com</td>
-                    </tr>
-                    <tr>
-                        <td>Maria Souza</td>
-                        <td>987.654.321-00</td>
-                        <td>(31) 98888-2222</td>
-                        <td>maria@email.com</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>123.456.789-00</td>
+                            <td>(31) 99999-1111</td>
+                            <td>joao@email.com</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Souza</td>
+                            <td>987.654.321-00</td>
+                            <td>(31) 98888-2222</td>
+                            <td>maria@email.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>

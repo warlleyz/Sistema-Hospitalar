@@ -29,65 +29,71 @@
         <section class="panel">
             <h3>Nova internação</h3>
             <form>
-                <label>Paciente</label>
-                <select>
+                <label for="paciente">Paciente</label>
+                <select id="paciente">
                     <option>Selecione um paciente</option>
                     <option>João Silva</option>
                     <option>Maria Souza</option>
                 </select>
 
-                <label>Profissional responsável</label>
-                <select>
+                <label for="profissional-responsavel">Profissional responsável</label>
+                <select id="profissional-responsavel">
                     <option>Selecione um profissional</option>
                     <option>Ana Costa</option>
                     <option>Carlos Lima</option>
                 </select>
 
-                <label>Quarto</label>
-                <input type="text" placeholder="Número do quarto">
+                <label for="quarto">Quarto</label>
+                <input id="quarto" type="text" placeholder="Número do quarto">
 
-                <label>Data de entrada</label>
-                <input type="date">
+                <label for="data-de-entrada">Data de entrada</label>
+                <input id="data-de-entrada" type="date">
 
-                <label>Data prevista de alta</label>
-                <input type="date">
+                <label for="data-prevista-de-alta">Data prevista de alta</label>
+                <input id="data-prevista-de-alta" type="date">
 
-                <label>Observações</label>
-                <textarea rows="4" placeholder="Observações"></textarea>
+                <label for="data-efetiva-de-alta">Data efetiva de alta</label>
+                <input id="data-efetiva-de-alta" type="date">
 
-                <button type="button">Registrar</button>
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" rows="4" placeholder="Observações"></textarea>
+
+                <button type="button" disabled>Registrar</button>
             </form>
+            <p>A alta efetiva fica em branco enquanto o paciente estiver internado. A entrada exige vaga no quarto, respeitando sua capacidade.</p>
         </section>
 
         <section class="panel">
             <h3>Internações atuais</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Paciente</th>
-                        <th>Profissional</th>
-                        <th>Quarto</th>
-                        <th>Entrada</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>João Silva</td>
-                        <td>Ana Costa</td>
-                        <td>201</td>
-                        <td>05/10/2026</td>
-                        <td>Internado</td>
-                    </tr>
-                    <tr>
-                        <td>Maria Souza</td>
-                        <td>Carlos Lima</td>
-                        <td>104</td>
-                        <td>02/10/2026</td>
-                        <td>Alta prevista</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Profissional</th>
+                            <th>Quarto</th>
+                            <th>Entrada</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>Ana Costa</td>
+                            <td>201</td>
+                            <td>05/10/2026</td>
+                            <td>Internado</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Souza</td>
+                            <td>Carlos Lima</td>
+                            <td>104</td>
+                            <td>02/10/2026</td>
+                            <td>Alta prevista</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>

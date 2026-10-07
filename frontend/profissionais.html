@@ -29,51 +29,53 @@
         <section class="panel">
             <h3>Novo profissional</h3>
             <form>
-                <label>Nome</label>
-                <input type="text" placeholder="Nome completo">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Nome completo">
 
-                <label>Registro profissional</label>
-                <input type="text" placeholder="CRM ou registro equivalente">
+                <label for="registro-profissional">Registro profissional</label>
+                <input id="registro-profissional" type="text" placeholder="CRM ou registro equivalente">
 
-                <label>Especialidade</label>
-                <input type="text" placeholder="Especialidade">
+                <label for="especialidade">Especialidade</label>
+                <input id="especialidade" type="text" placeholder="Especialidade">
 
-                <label>Telefone</label>
-                <input type="text" placeholder="(00) 00000-0000">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="text" placeholder="(00) 00000-0000">
 
-                <label>E-mail</label>
-                <input type="email" placeholder="email@exemplo.com">
+                <label for="e-mail">E-mail</label>
+                <input id="e-mail" type="email" placeholder="email@exemplo.com">
 
-                <button type="button">Cadastrar</button>
+                <button type="button" disabled>Cadastrar</button>
             </form>
         </section>
 
         <section class="panel">
             <h3>Profissionais cadastrados</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Registro</th>
-                        <th>Especialidade</th>
-                        <th>Telefone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ana Costa</td>
-                        <td>CRM 12345</td>
-                        <td>Clínica Geral</td>
-                        <td>(31) 97777-3333</td>
-                    </tr>
-                    <tr>
-                        <td>Carlos Lima</td>
-                        <td>CRM 67890</td>
-                        <td>Cardiologia</td>
-                        <td>(31) 96666-4444</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Registro</th>
+                            <th>Especialidade</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ana Costa</td>
+                            <td>CRM 12345</td>
+                            <td>Clínica Geral</td>
+                            <td>(31) 97777-3333</td>
+                        </tr>
+                        <tr>
+                            <td>Carlos Lima</td>
+                            <td>CRM 67890</td>
+                            <td>Cardiologia</td>
+                            <td>(31) 96666-4444</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>

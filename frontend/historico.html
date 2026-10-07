@@ -29,42 +29,44 @@
         <section class="panel">
             <h3>Selecionar paciente</h3>
             <form>
-                <label>Paciente</label>
-                <select>
+                <label for="paciente">Paciente</label>
+                <select id="paciente">
                     <option>João Silva</option>
                     <option>Maria Souza</option>
                 </select>
 
-                <button type="button">Consultar</button>
+                <button type="button" disabled>Consultar</button>
             </form>
         </section>
 
         <section class="panel">
             <h3>Histórico de João Silva</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tipo</th>
-                        <th>Data</th>
-                        <th>Profissional</th>
-                        <th>Informação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Consulta</td>
-                        <td>20/09/2026</td>
-                        <td>Ana Costa</td>
-                        <td>Consulta clínica</td>
-                    </tr>
-                    <tr>
-                        <td>Internação</td>
-                        <td>05/10/2026</td>
-                        <td>Ana Costa</td>
-                        <td>Quarto 201</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Data</th>
+                            <th>Profissional</th>
+                            <th>Informação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Consulta</td>
+                            <td>20/09/2026</td>
+                            <td>Ana Costa</td>
+                            <td>Consulta clínica realizada. Orientações de acompanhamento registradas.</td>
+                        </tr>
+                        <tr>
+                            <td>Internação</td>
+                            <td>05/10/2026</td>
+                            <td>Ana Costa</td>
+                            <td>Quarto 201. Acompanhamento durante a internação.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>

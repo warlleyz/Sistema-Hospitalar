@@ -28,36 +28,43 @@
 
         <section class="panel">
             <h3>Quartos cadastrados</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Número</th>
-                        <th>Andar</th>
-                        <th>Capacidade</th>
-                        <th>Situação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>1º</td>
-                        <td>2 pacientes</td>
-                        <td>Disponível</td>
-                    </tr>
-                    <tr>
-                        <td>104</td>
-                        <td>1º</td>
-                        <td>1 paciente</td>
-                        <td>Ocupado</td>
-                    </tr>
-                    <tr>
-                        <td>201</td>
-                        <td>2º</td>
-                        <td>2 pacientes</td>
-                        <td>Ocupado</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Andar</th>
+                            <th>Capacidade</th>
+                            <th>Ocupação atual</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>1º</td>
+                            <td>2 pacientes</td>
+                            <td>0 pacientes</td>
+                            <td>Disponível</td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>1º</td>
+                            <td>1 paciente</td>
+                            <td>1 paciente</td>
+                            <td>Ocupado</td>
+                        </tr>
+                        <tr>
+                            <td>201</td>
+                            <td>2º</td>
+                            <td>2 pacientes</td>
+                            <td>1 paciente</td>
+                            <td>Ocupado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Quartos ocupados podem ter vagas restantes. A ocupação não pode ultrapassar a capacidade máxima.</p>
         </section>
     </main>
 </body>

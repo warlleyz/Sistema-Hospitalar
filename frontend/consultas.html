@@ -29,62 +29,65 @@
         <section class="panel">
             <h3>Agendar consulta</h3>
             <form>
-                <label>Paciente</label>
-                <select>
+                <label for="paciente">Paciente</label>
+                <select id="paciente">
                     <option>Selecione um paciente</option>
                     <option>João Silva</option>
                     <option>Maria Souza</option>
                 </select>
 
-                <label>Profissional responsável</label>
-                <select>
+                <label for="profissional-responsavel">Profissional responsável</label>
+                <select id="profissional-responsavel">
                     <option>Selecione um profissional</option>
                     <option>Ana Costa</option>
                     <option>Carlos Lima</option>
                 </select>
 
-                <label>Data</label>
-                <input type="date">
+                <label for="data">Data</label>
+                <input id="data" type="date">
 
-                <label>Horário</label>
-                <input type="time">
+                <label for="horario">Horário</label>
+                <input id="horario" type="time">
 
-                <label>Motivo da consulta</label>
-                <input type="text" placeholder="Motivo">
+                <label for="motivo-da-consulta">Motivo da consulta</label>
+                <input id="motivo-da-consulta" type="text" placeholder="Motivo">
 
-                <label>Observações médicas</label>
-                <textarea rows="4" placeholder="Observações"></textarea>
+                <label for="observacoes-medicas">Observações médicas</label>
+                <textarea id="observacoes-medicas" rows="4" placeholder="Observações"></textarea>
 
-                <button type="button">Agendar</button>
+                <button type="button" disabled>Agendar</button>
             </form>
+            <p>O agendamento deverá verificar a disponibilidade do profissional. Não será permitido agendar dois atendimentos na mesma data e horário.</p>
         </section>
 
         <section class="panel">
             <h3>Consultas agendadas</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Paciente</th>
-                        <th>Profissional</th>
-                        <th>Data</th>
-                        <th>Horário</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>João Silva</td>
-                        <td>Ana Costa</td>
-                        <td>08/10/2026</td>
-                        <td>09:00</td>
-                    </tr>
-                    <tr>
-                        <td>Maria Souza</td>
-                        <td>Carlos Lima</td>
-                        <td>09/10/2026</td>
-                        <td>14:30</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Profissional</th>
+                            <th>Data</th>
+                            <th>Horário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>Ana Costa</td>
+                            <td>08/10/2026</td>
+                            <td>09:00</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Souza</td>
+                            <td>Carlos Lima</td>
+                            <td>09/10/2026</td>
+                            <td>14:30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>

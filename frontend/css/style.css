@@ -24,12 +24,15 @@ header p {
 }
 
 nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
     padding: 12px 20px;
     background-color: #eeeeee;
 }
 
 nav a {
-    margin-right: 18px;
+    margin-right: 0;
     color: #222;
     text-decoration: none;
 }
@@ -100,4 +103,19 @@ td {
     padding: 10px;
     text-align: left;
     border: 1px solid #dddddd;
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    table {
+        min-width: 560px;
+    }
 }
