@@ -26,16 +26,17 @@ listada expressamente nas entregas da Sprint 2.
 
 ## Etapa 0: fundacao, antes das branches independentes
 
-Responsavel pela integracao: Warlley. Este e o proximo trabalho, ainda pendente.
+Responsavel pela integracao: Warlley. Fundacao implementada na branch `warlley`;
+merge na `main` ainda depende de revisao. Veja [a entrega](../EntregaWarlley.md).
 
-- [ ] Resolver ou registrar as duvidas de [contratos](contratos.md).
-- [ ] Definir Java, Spring Boot e build compativeis e versionar o wrapper.
-- [ ] Criar `backend/`, comando de inicializacao e verificacao de build.
-- [ ] Escolher banco e justificar; definir configuracao local sem credenciais.
-- [ ] Definir pacote raiz e organizacao por modulo com camadas internas.
-- [ ] Publicar interfaces de consulta de pacientes e profissionais, incluindo os
+- [x] Resolver ou registrar as duvidas de [contratos](contratos.md).
+- [x] Definir Java, Spring Boot e build compativeis e versionar o wrapper.
+- [x] Criar `backend/`, comando de inicializacao e verificacao de build.
+- [x] Escolher banco e justificar; definir configuracao local sem credenciais.
+- [x] Definir pacote raiz e organizacao por modulo com camadas internas.
+- [x] Publicar interfaces de consulta de pacientes e profissionais, incluindo os
       tipos de retorno, para as outras frentes poderem usar simulacoes nos testes.
-- [ ] Definir formato comum de erro e estrategia de migracoes, se aplicavel.
+- [x] Definir formato comum de erro e estrategia de migracoes, se aplicavel.
 - [ ] Integrar essa base na `main` e comunicar o commit de partida aos tres.
 
 Nao criar classes de dominio vazias como se fossem implementacoes concluidas.
@@ -116,4 +117,5 @@ deve continuar consultavel apos alta ou conclusao.
 - [ ] Banco e decisoes tecnicas estao documentados; segredos nao estao versionados.
 - [ ] Diagrama, codigo, instrucoes de execucao e exemplos da API concordam.
 
-As caixas acima permanecem abertas ate haver evidencias de implementacao.
+Os criterios globais permanecem abertos ate validar tambem as frentes dos colegas.
+A entrega de Warlley registra separadamente o que ja foi testado.

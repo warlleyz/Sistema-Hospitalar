@@ -1,4 +1,7 @@
-# Estado da base
+# Estado do protótipo da Sprint 1
+
+Este documento preserva o diagnóstico do marco de preparação. O estado atual do
+backend está no [README](../README.md) e na [entrega de Warlley](EntregaWarlley.md).
 
 ## Marco preservado
 

@@ -1,55 +1,62 @@
 # Sistema Hospitalar
 
-Trabalho prático da disciplina de Programação Modular do curso de Engenharia de Software da PUC Minas.
+Trabalho prático de Programação Modular, Engenharia de Software, PUC Minas.
+Sistema para pacientes, profissionais, consultas, internações, quartos e histórico.
 
-## Objetivo
+## Estado atual
 
-Organizar os dados de pacientes, profissionais da saúde, consultas, internações, quartos e histórico médico de um hospital.
+- **Sprint 1:** sete telas estáticas, diagrama inicial e cartões CRC.
+- **Sprint 2 / Warlley:** fundação Spring Boot, modalidades de atendimento,
+  consultas, emergências, cirurgias, estados e agenda persistida implementados.
+- **Mateus:** cadastros de pacientes e profissionais ainda pendentes de integração.
+- **Luiz:** quartos e internações ainda pendentes de integração.
 
-## Sprint 1
+O backend inicia sem os módulos dos colegas. Operações que dependem de seus
+cadastros retornam `503 MODULO_INDISPONIVEL` até que as interfaces sejam
+implementadas. Não existem cadastros fictícios em produção.
 
-O projeto está na Sprint 1, dedicada às telas estáticas e à modelagem inicial. As entregas são:
+## Executar o backend
 
-- [Front-end estático](frontend/index.html), com as telas do sistema;
-- [Diagrama de classes](docs/diagrama-classes.svg), também disponível em [Mermaid](docs/diagrama-classes.md);
-- [Cartões CRC](docs/cartoes-crc.docx), com as seis classes do domínio.
+Requer JDK 17 a 25. No PowerShell:
 
-As telas usam dados de exemplo e ainda não possuem funcionalidade. Os botões não cadastram, agendam, consultam ou salvam informações.
-
-## Como visualizar
-
-Baixe o repositório e abra `frontend/index.html` no navegador. O menu permite navegar entre as telas. Não é necessário instalar dependências ou iniciar um servidor.
-
-## Preparação para a Sprint 2
-
-A base foi organizada para iniciar a próxima etapa. O cadastro visual de quartos,
-a indicação de vagas e a navegação acessível complementam o protótipo estático.
-Não há backend, API, banco de dados ou testes de regras de negócio implementados.
-
-- [Estado e limitações da Sprint 1](docs/estado-atual.md).
-- [Plano, responsáveis e critérios da Sprint 2](docs/sprint-2/plano.md).
-- [Contratos propostos e decisões pendentes](docs/sprint-2/contratos.md).
-- [Fluxo de contribuição e revisão](CONTRIBUTING.md).
-
-O primeiro passo de implementação será integrar a fundação Spring Boot e os
-contratos comuns. As branches independentes de funcionalidades devem partir
-desse marco. As decisões propostas na documentação ainda precisam ser validadas
-na fundação; não são endpoints ou classes já existentes.
-
-## Organização
-
-```text
-frontend/             Telas HTML e CSS da Sprint 1
-docs/                 Diagrama, cartões CRC e estado da base
-docs/sprint-2/        Planejamento e contratos da próxima etapa
-.github/              Modelo para revisão de pull requests
+```powershell
+cd backend
+.\mvnw.cmd verify
+.\mvnw.cmd spring-boot:run
 ```
 
-Os PDFs do enunciado não estão versionados. O plano distingue exigências dos
-documentos fornecidos, decisões técnicas propostas e dúvidas para o professor.
+No Linux/macOS: `./mvnw verify` e `./mvnw spring-boot:run`.
+O primeiro uso requer internet para baixar Maven e dependências.
+API em `http://localhost:8080`; banco H2 em arquivo `backend/data/hospital.mv.db`.
+Não é necessário instalar Maven ou um servidor de banco separado.
+
+Recursos implementados: `/consultas`, `/emergencias`, `/cirurgias` e
+`/atendimentos/disponibilidade`. Listagens sem registros retornam listas vazias.
+Exemplos e limites estão na [entrega de Warlley](docs/EntregaWarlley.md).
+
+## Visualizar o protótipo
+
+Abra [frontend/index.html](frontend/index.html) no navegador.
+As telas usam dados fictícios e não estão conectadas à API; botões de negócio
+continuam desabilitados. O formulário de quartos não salva informações.
+
+## Documentação
+
+- [Entrega de Warlley: API, estados, testes e integração](docs/EntregaWarlley.md).
+- [Fundação: tecnologias e contratos para os colegas](docs/sprint-2/fundacao.md).
+- [Plano e responsabilidades da Sprint 2](docs/sprint-2/plano.md).
+- [Propostas iniciais e dúvidas do enunciado](docs/sprint-2/contratos.md).
+- [Diagrama implementado dos atendimentos](docs/sprint-2/diagrama-atendimentos.md).
+- [Estado do protótipo e limitações da Sprint 1](docs/estado-atual.md).
+- [Diagrama inicial SVG](docs/diagrama-classes.svg) e [Mermaid](docs/diagrama-classes.md).
+- [Cartões CRC da Sprint 1](docs/cartoes-crc.docx).
+- [Contribuição e revisão](CONTRIBUTING.md).
+
+Os PDFs do enunciado não estão versionados. A documentação distingue exigências,
+decisões técnicas e dúvidas ainda abertas, especialmente tipos de quartos.
 
 ## Integrantes
 
-- Warlley Silva Baião Braga
-- Mateus Andrade Motta
-- Luiz Gustavo Moura e Souza
+- Warlley Silva Baião Braga: branch `warlley`.
+- Mateus Andrade Motta: branch `mateus`.
+- Luiz Gustavo Moura e Souza: branch `luiz`.

@@ -61,7 +61,7 @@ referenciados. A integração final deve verificar a integridade desses vínculo
 
 Cada módulo fornece sua própria migração Flyway, com versões por frente para não
 colidir: Warlley `V100__...`, Mateus `V200__...`, Luiz `V300__...`; incrementos dentro
-cada faixa. `spring.flyway.out-of-order=true` aceita integração das faixas fora de
+de cada faixa. `spring.flyway.out-of-order=true` aceita integração das faixas fora de
 ordem, pois as tabelas dos módulos não dependem de ordem entre frentes.
 Não criar chaves estrangeiras para tabelas de outra frente antes de combinar.
 
@@ -102,3 +102,12 @@ Luiz deve validar/documentar esse ciclo na sua frente.
 Corpo: `codigo`, `mensagem`, `campos` (lista de `campo` e `mensagem`).
 400: formato/validação; 404: registro inexistente; 409: regra, estado ou concorrência;
 503: dependência de cadastro ainda não integrada. Não expor stack trace.
+
+## Contrato da disponibilidade
+
+`ConsultaDisponibilidade.disponivel(Long profissionalId, LocalDateTime inicio)` é
+implementado por `AtendimentoService`. Mateus pode injetar essa interface para
+combinar especialidade e horário na busca de profissionais. O resultado é uma
+consulta informativa, não uma reserva: o registro do atendimento revalida o horário
+sob bloqueio no banco. A chamada pode retornar 404 para profissional inexistente
+ou 503 enquanto os cadastros não estiverem integrados.

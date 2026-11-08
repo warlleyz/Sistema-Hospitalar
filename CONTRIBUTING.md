@@ -2,10 +2,11 @@
 
 ## Estado da base
 
-As telas em `frontend/` sao prototipos estaticos. Nao existe backend neste marco.
+As telas em `frontend/` sao prototipos estaticos. O backend de Warlley esta
+implementado em `backend/`, aguardando integracao das frentes de cadastros e internacoes.
 Consulte [o plano da Sprint 2](docs/sprint-2/plano.md) antes de implementar.
-O diagrama e os CRC existentes descrevem a Sprint 1; nao representam as novas
-categorias e modalidades da Sprint 2.
+O diagrama e os CRC na raiz de `docs/` preservam a Sprint 1. O diagrama de
+atendimentos e os contratos da Sprint 2 estao em `docs/sprint-2/`.
 
 ## Branches e autoria
 
