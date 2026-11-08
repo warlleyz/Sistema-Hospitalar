@@ -26,16 +26,17 @@ listada expressamente nas entregas da Sprint 2.
 
 ## Etapa 0: fundacao, antes das branches independentes
 
-Responsavel pela integracao: Warlley. Este e o proximo trabalho, ainda pendente.
+Responsavel pela integracao: Warlley. Fundacao implementada na branch `warlley`;
+merge na `main` ainda depende de revisao. Veja [a entrega](../EntregaWarlley.md).
 
-- [ ] Resolver ou registrar as duvidas de [contratos](contratos.md).
-- [ ] Definir Java, Spring Boot e build compativeis e versionar o wrapper.
-- [ ] Criar `backend/`, comando de inicializacao e verificacao de build.
-- [ ] Escolher banco e justificar; definir configuracao local sem credenciais.
-- [ ] Definir pacote raiz e organizacao por modulo com camadas internas.
-- [ ] Publicar interfaces de consulta de pacientes e profissionais, incluindo os
+- [x] Resolver ou registrar as duvidas de [contratos](contratos.md).
+- [x] Definir Java, Spring Boot e build compativeis e versionar o wrapper.
+- [x] Criar `backend/`, comando de inicializacao e verificacao de build.
+- [x] Escolher banco e justificar; definir configuracao local sem credenciais.
+- [x] Definir pacote raiz e organizacao por modulo com camadas internas.
+- [x] Publicar interfaces de consulta de pacientes e profissionais, incluindo os
       tipos de retorno, para as outras frentes poderem usar simulacoes nos testes.
-- [ ] Definir formato comum de erro e estrategia de migracoes, se aplicavel.
+- [x] Definir formato comum de erro e estrategia de migracoes, se aplicavel.
 - [ ] Integrar essa base na `main` e comunicar o commit de partida aos tres.
 
 Nao criar classes de dominio vazias como se fossem implementacoes concluidas.
@@ -45,9 +46,9 @@ Nao iniciar tres projetos Spring Boot separados.
 
 | Responsavel | Branch | Diretorios propostos dentro do pacote raiz |
 | --- | --- | --- |
-| Warlley | `codex/sprint2-atendimentos` | `atendimentos/` |
-| Mateus | `codex/sprint2-cadastros` | `pacientes/`, `profissionais/` |
-| Luiz Gustavo | `codex/sprint2-internacoes` | `quartos/`, `internacoes/` |
+| Warlley | `warlley` | `atendimentos/` |
+| Mateus | `mateus` | `pacientes/`, `profissionais/` |
+| Luiz Gustavo | `luiz` | `quartos/`, `internacoes/` |
 
 ### Mateus: cadastros
 
@@ -57,7 +58,7 @@ Nao iniciar tres projetos Spring Boot separados.
   informada pelo modulo de atendimentos, sem criar uma segunda agenda.
 - Endpoints de pacientes e profissionais, persistencia, validacoes e testes.
 - Implementacoes reais das interfaces de consulta definidas na fundacao.
-- Documentacao e trecho do diagrama em `docs/sprint-2/cadastros.md`.
+- Documentacao e trecho do diagrama em `docs/EntregaMateus.md`.
 
 ### Warlley: atendimentos
 
@@ -81,7 +82,7 @@ Nao iniciar tres projetos Spring Boot separados.
 - Alta efetiva, liberacao da vaga e preservacao dos registros anteriores.
 - Rejeicao de capacidade excedida, inclusive em requisicoes simultaneas.
 - Consulta das internacoes de um paciente, endpoints, persistencia e testes.
-- Documentacao em `docs/sprint-2/internacoes.md`.
+- Documentacao em `docs/EntregaLuiz.md`.
 
 Cada frente entrega suas camadas e testes; nao dividir a equipe por controller,
 service e repository, pois isso tornaria toda funcionalidade dependente dos tres.
@@ -116,4 +117,5 @@ deve continuar consultavel apos alta ou conclusao.
 - [ ] Banco e decisoes tecnicas estao documentados; segredos nao estao versionados.
 - [ ] Diagrama, codigo, instrucoes de execucao e exemplos da API concordam.
 
-As caixas acima permanecem abertas ate haver evidencias de implementacao.
+Os criterios globais permanecem abertos ate validar tambem as frentes dos colegas.
+A entrega de Warlley registra separadamente o que ja foi testado.

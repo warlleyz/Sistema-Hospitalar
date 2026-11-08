@@ -4,3 +4,10 @@
 *.md text eol=lf
 *.svg text eol=lf
 *.docx binary
+
+*.java text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.sql text eol=lf
+mvnw text eol=lf
+*.cmd text eol=crlf
