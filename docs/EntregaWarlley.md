@@ -49,7 +49,7 @@ encerrado depois dessas consultas.
 
 Os dados de pacientes/profissionais dos testes existem somente em
 `src/test/java/.../CadastrosTestConfig.java`; não são seed ou cadastro em produção.
-Os testes foram executados com JDK 25, compilando para Java 17.
+Os testes são executados com JDK 25 e compilam para Java 25.
 
 ## Recursos HTTP
 

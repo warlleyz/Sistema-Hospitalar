@@ -2,7 +2,7 @@
 
 ## Tecnologias
 
-- Java 17 (bytecode), compatível com o JDK 25 disponível nesta máquina.
+- Java 25 (LTS), compatível com o JDK 25 disponível nesta máquina.
 - Spring Boot 3.5.16, Spring MVC, Bean Validation e Spring Data JPA.
 - Maven Wrapper 3.9.16: não exige Maven instalado, mas exige JDK e internet no primeiro uso.
 - H2 relacional em arquivo, com transações e restrições; Flyway cria o esquema e

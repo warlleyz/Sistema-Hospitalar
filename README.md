@@ -17,7 +17,7 @@ implementadas. Não existem cadastros fictícios em produção.
 
 ## Executar o backend
 
-Requer JDK 17 a 25. No PowerShell:
+Requer JDK 25 (LTS). No PowerShell:
 
 ```powershell
 cd backend
