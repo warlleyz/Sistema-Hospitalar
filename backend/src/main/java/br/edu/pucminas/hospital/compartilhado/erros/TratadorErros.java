@@ -8,6 +8,8 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import jakarta.validation.ConstraintViolationException;
 
 @RestControllerAdvice
 public class TratadorErros {
@@ -35,7 +37,8 @@ public class TratadorErros {
             .map(f -> new CampoErro(f.getField(), f.getDefaultMessage())).toList();
         return ResponseEntity.badRequest().body(new ErroApi("ENTRADA_INVALIDA", "Revise os campos informados.", campos));
     }
-    @ExceptionHandler({HttpMessageNotReadableException.class, MethodArgumentTypeMismatchException.class})
+    @ExceptionHandler({HttpMessageNotReadableException.class, MethodArgumentTypeMismatchException.class,
+        MissingServletRequestParameterException.class, ConstraintViolationException.class})
     ResponseEntity<ErroApi> formato(Exception e) {
         return resposta(400, "ENTRADA_INVALIDA", "JSON, identificador ou valor de enum invalido.");
     }
