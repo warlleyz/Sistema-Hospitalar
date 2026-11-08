@@ -7,22 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
         <h1>Sistema Hospitalar</h1>
         <p>Protótipo inicial - Sprint 1</p>
     </header>
 
-    <nav>
+    <nav aria-label="Navegação principal">
         <a href="index.html">Início</a>
         <a href="pacientes.html">Pacientes</a>
         <a href="profissionais.html">Profissionais</a>
         <a href="consultas.html">Consultas</a>
-        <a href="internacoes.html">Internações</a>
+        <a href="internacoes.html" aria-current="page">Internações</a>
         <a href="quartos.html">Quartos</a>
         <a href="historico.html">Histórico</a>
     </nav>
 
-    <main>
+    <main id="conteudo" tabindex="-1">
+        <p class="prototype-notice">Protótipo estático: dados fictícios. Os formulários não salvam informações e as ações estão desabilitadas.</p>
         <h2>Internações</h2>
         <p>Registro e visualização inicial das internações.</p>
 
@@ -30,33 +32,33 @@
             <h3>Nova internação</h3>
             <form>
                 <label for="paciente">Paciente</label>
-                <select id="paciente">
+                <select id="paciente" name="paciente">
                     <option>Selecione um paciente</option>
                     <option>João Silva</option>
                     <option>Maria Souza</option>
                 </select>
 
                 <label for="profissional-responsavel">Profissional responsável</label>
-                <select id="profissional-responsavel">
+                <select id="profissional-responsavel" name="profissional-responsavel">
                     <option>Selecione um profissional</option>
                     <option>Ana Costa</option>
                     <option>Carlos Lima</option>
                 </select>
 
                 <label for="quarto">Quarto</label>
-                <input id="quarto" type="text" placeholder="Número do quarto">
+                <input id="quarto" name="quarto" type="text" placeholder="Número do quarto">
 
                 <label for="data-de-entrada">Data de entrada</label>
-                <input id="data-de-entrada" type="date">
+                <input id="data-de-entrada" name="data-de-entrada" type="date">
 
                 <label for="data-prevista-de-alta">Data prevista de alta</label>
-                <input id="data-prevista-de-alta" type="date">
+                <input id="data-prevista-de-alta" name="data-prevista-de-alta" type="date">
 
                 <label for="data-efetiva-de-alta">Data efetiva de alta</label>
-                <input id="data-efetiva-de-alta" type="date">
+                <input id="data-efetiva-de-alta" name="data-efetiva-de-alta" type="date">
 
                 <label for="observacoes">Observações</label>
-                <textarea id="observacoes" rows="4" placeholder="Observações"></textarea>
+                <textarea id="observacoes" name="observacoes" rows="4" placeholder="Observações"></textarea>
 
                 <button type="button" disabled>Registrar</button>
             </form>
@@ -65,15 +67,15 @@
 
         <section class="panel">
             <h3>Internações atuais</h3>
-            <div class="table-container">
+            <div class="table-container" role="region" aria-label="Tabela de dados com rolagem horizontal" tabindex="0">
                 <table>
                     <thead>
                         <tr>
-                            <th>Paciente</th>
-                            <th>Profissional</th>
-                            <th>Quarto</th>
-                            <th>Entrada</th>
-                            <th>Status</th>
+                            <th scope="col">Paciente</th>
+                            <th scope="col">Profissional</th>
+                            <th scope="col">Quarto</th>
+                            <th scope="col">Entrada</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,7 +91,7 @@
                             <td>Carlos Lima</td>
                             <td>104</td>
                             <td>02/10/2026</td>
-                            <td>Alta prevista</td>
+                            <td>Internado</td>
                         </tr>
                     </tbody>
                 </table>

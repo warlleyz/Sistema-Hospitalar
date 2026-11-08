@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
         <h1>Sistema Hospitalar</h1>
         <p>Protótipo inicial - Sprint 1</p>
     </header>
 
-    <nav>
-        <a href="index.html">Início</a>
+    <nav aria-label="Navegação principal">
+        <a href="index.html" aria-current="page">Início</a>
         <a href="pacientes.html">Pacientes</a>
         <a href="profissionais.html">Profissionais</a>
         <a href="consultas.html">Consultas</a>
@@ -22,7 +23,8 @@
         <a href="historico.html">Histórico</a>
     </nav>
 
-    <main>
+    <main id="conteudo" tabindex="-1">
+        <p class="prototype-notice">Protótipo estático: dados fictícios. Os formulários não salvam informações e as ações estão desabilitadas.</p>
         <h2>Dashboard</h2>
         <p>Visão geral das principais informações do hospital.</p>
 
@@ -44,7 +46,7 @@
 
             <div class="card">
                 <h3>Quartos</h3>
-                <p>1 disponível</p>
+                <p>2 com vagas (3 vagas no total)</p>
             </div>
         </section>
     </main>

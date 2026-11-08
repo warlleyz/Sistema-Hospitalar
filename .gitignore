@@ -1,0 +1,19 @@
+# IDEs e arquivos locais
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Build Java e logs
+target/
+build/
+*.log
+
+# Configuracoes locais e segredos
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+application-local.yaml

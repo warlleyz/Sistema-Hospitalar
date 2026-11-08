@@ -7,36 +7,56 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
         <h1>Sistema Hospitalar</h1>
         <p>Protótipo inicial - Sprint 1</p>
     </header>
 
-    <nav>
+    <nav aria-label="Navegação principal">
         <a href="index.html">Início</a>
         <a href="pacientes.html">Pacientes</a>
         <a href="profissionais.html">Profissionais</a>
         <a href="consultas.html">Consultas</a>
         <a href="internacoes.html">Internações</a>
-        <a href="quartos.html">Quartos</a>
+        <a href="quartos.html" aria-current="page">Quartos</a>
         <a href="historico.html">Histórico</a>
     </nav>
 
-    <main>
+    <main id="conteudo" tabindex="-1">
+        <p class="prototype-notice">Protótipo estático: dados fictícios. Os formulários não salvam informações e as ações estão desabilitadas.</p>
         <h2>Quartos</h2>
-        <p>Visualização inicial da disponibilidade dos quartos hospitalares.</p>
+        <p>Cadastro visual e disponibilidade dos quartos hospitalares.</p>
+
+        <section class="panel">
+            <h3>Novo quarto</h3>
+            <form>
+                <label for="numero-identificacao">Número de identificação</label>
+                <input id="numero-identificacao" name="numeroIdentificacao" type="text" placeholder="Ex.: 101">
+
+                <label for="andar">Andar</label>
+                <input id="andar" name="andar" type="number" placeholder="Ex.: 1">
+
+                <label for="capacidade-maxima">Capacidade máxima de pacientes</label>
+                <input id="capacidade-maxima" name="capacidadeMaxima" type="number" min="1" placeholder="Ex.: 2">
+
+                <button type="button" disabled>Cadastrar</button>
+            </form>
+            <p>A situação e as vagas serão calculadas a partir das internações ativas. Este formulário é apenas um protótipo.</p>
+        </section>
 
         <section class="panel">
             <h3>Quartos cadastrados</h3>
-            <div class="table-container">
+            <div class="table-container" role="region" aria-label="Tabela de dados com rolagem horizontal" tabindex="0">
                 <table>
                     <thead>
                         <tr>
-                            <th>Número</th>
-                            <th>Andar</th>
-                            <th>Capacidade</th>
-                            <th>Ocupação atual</th>
-                            <th>Situação</th>
+                            <th scope="col">Número</th>
+                            <th scope="col">Andar</th>
+                            <th scope="col">Capacidade</th>
+                            <th scope="col">Ocupação atual</th>
+                            <th scope="col">Vagas</th>
+                            <th scope="col">Situação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +65,7 @@
                             <td>1º</td>
                             <td>2 pacientes</td>
                             <td>0 pacientes</td>
+                            <td>2</td>
                             <td>Disponível</td>
                         </tr>
                         <tr>
@@ -52,6 +73,7 @@
                             <td>1º</td>
                             <td>1 paciente</td>
                             <td>1 paciente</td>
+                            <td>0</td>
                             <td>Ocupado</td>
                         </tr>
                         <tr>
@@ -59,6 +81,7 @@
                             <td>2º</td>
                             <td>2 pacientes</td>
                             <td>1 paciente</td>
+                            <td>1</td>
                             <td>Ocupado</td>
                         </tr>
                     </tbody>

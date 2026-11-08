@@ -20,9 +20,33 @@ As telas usam dados de exemplo e ainda não possuem funcionalidade. Os botões n
 
 Baixe o repositório e abra `frontend/index.html` no navegador. O menu permite navegar entre as telas. Não é necessário instalar dependências ou iniciar um servidor.
 
-## Próximas sprints
+## Preparação para a Sprint 2
 
-Backend, API REST com Spring Boot, banco de dados e aplicação das regras de negócio serão desenvolvidos nas próximas sprints. A verificação de horários dos profissionais e de capacidade dos quartos ainda não está implementada.
+A base foi organizada para iniciar a próxima etapa. O cadastro visual de quartos,
+a indicação de vagas e a navegação acessível complementam o protótipo estático.
+Não há backend, API, banco de dados ou testes de regras de negócio implementados.
+
+- [Estado e limitações da Sprint 1](docs/estado-atual.md).
+- [Plano, responsáveis e critérios da Sprint 2](docs/sprint-2/plano.md).
+- [Contratos propostos e decisões pendentes](docs/sprint-2/contratos.md).
+- [Fluxo de contribuição e revisão](CONTRIBUTING.md).
+
+O primeiro passo de implementação será integrar a fundação Spring Boot e os
+contratos comuns. As branches independentes de funcionalidades devem partir
+desse marco. As decisões propostas na documentação ainda precisam ser validadas
+na fundação; não são endpoints ou classes já existentes.
+
+## Organização
+
+```text
+frontend/             Telas HTML e CSS da Sprint 1
+docs/                 Diagrama, cartões CRC e estado da base
+docs/sprint-2/        Planejamento e contratos da próxima etapa
+.github/              Modelo para revisão de pull requests
+```
+
+Os PDFs do enunciado não estão versionados. O plano distingue exigências dos
+documentos fornecidos, decisões técnicas propostas e dúvidas para o professor.
 
 ## Integrantes
 

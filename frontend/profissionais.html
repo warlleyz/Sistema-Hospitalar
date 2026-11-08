@@ -7,22 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
         <h1>Sistema Hospitalar</h1>
         <p>Protótipo inicial - Sprint 1</p>
     </header>
 
-    <nav>
+    <nav aria-label="Navegação principal">
         <a href="index.html">Início</a>
         <a href="pacientes.html">Pacientes</a>
-        <a href="profissionais.html">Profissionais</a>
+        <a href="profissionais.html" aria-current="page">Profissionais</a>
         <a href="consultas.html">Consultas</a>
         <a href="internacoes.html">Internações</a>
         <a href="quartos.html">Quartos</a>
         <a href="historico.html">Histórico</a>
     </nav>
 
-    <main>
+    <main id="conteudo" tabindex="-1">
+        <p class="prototype-notice">Protótipo estático: dados fictícios. Os formulários não salvam informações e as ações estão desabilitadas.</p>
         <h2>Profissionais da Saúde</h2>
         <p>Cadastro e visualização inicial dos profissionais.</p>
 
@@ -30,19 +32,19 @@
             <h3>Novo profissional</h3>
             <form>
                 <label for="nome">Nome</label>
-                <input id="nome" type="text" placeholder="Nome completo">
+                <input id="nome" name="nome" type="text" placeholder="Nome completo">
 
                 <label for="registro-profissional">Registro profissional</label>
-                <input id="registro-profissional" type="text" placeholder="CRM ou registro equivalente">
+                <input id="registro-profissional" name="registro-profissional" type="text" placeholder="CRM ou registro equivalente">
 
                 <label for="especialidade">Especialidade</label>
-                <input id="especialidade" type="text" placeholder="Especialidade">
+                <input id="especialidade" name="especialidade" type="text" placeholder="Especialidade">
 
                 <label for="telefone">Telefone</label>
-                <input id="telefone" type="text" placeholder="(00) 00000-0000">
+                <input id="telefone" name="telefone" type="text" placeholder="(00) 00000-0000">
 
                 <label for="e-mail">E-mail</label>
-                <input id="e-mail" type="email" placeholder="email@exemplo.com">
+                <input id="e-mail" name="e-mail" type="email" placeholder="email@exemplo.com">
 
                 <button type="button" disabled>Cadastrar</button>
             </form>
@@ -50,14 +52,14 @@
 
         <section class="panel">
             <h3>Profissionais cadastrados</h3>
-            <div class="table-container">
+            <div class="table-container" role="region" aria-label="Tabela de dados com rolagem horizontal" tabindex="0">
                 <table>
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Registro</th>
-                            <th>Especialidade</th>
-                            <th>Telefone</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Registro</th>
+                            <th scope="col">Especialidade</th>
+                            <th scope="col">Telefone</th>
                         </tr>
                     </thead>
                     <tbody>
