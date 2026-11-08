@@ -17,9 +17,9 @@ categorias e modalidades da Sprint 2.
 
 Branches sugeridas:
 
-- Warlley: `codex/sprint2-atendimentos`.
-- Mateus: `codex/sprint2-cadastros`.
-- Luiz Gustavo: `codex/sprint2-internacoes`.
+- Warlley: `warlley`.
+- Mateus: `mateus`.
+- Luiz Gustavo: `luiz`.
 
 Cada integrante deve usar sua propria identidade no Git e revisar o codigo que
 entregar, inclusive quando houver assistencia de ferramentas. Faca commits por

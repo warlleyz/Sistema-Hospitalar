@@ -76,3 +76,8 @@ Nao retornar stack trace ou detalhes de infraestrutura ao cliente.
 Testes de cada frente devem cobrir rejeicoes e transicoes, alem dos casos validos.
 Testes de integracao devem conferir os contratos reais e a protecao contra
 requisicoes simultaneas nos recursos disputados.
+
+## Contratos concretos
+
+A [fundação](fundacao.md) define as interfaces e decisões implementadas. Em caso
+de diferença com propostas acima, use a fundação e o código atual como contrato.

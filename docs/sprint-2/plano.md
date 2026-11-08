@@ -45,9 +45,9 @@ Nao iniciar tres projetos Spring Boot separados.
 
 | Responsavel | Branch | Diretorios propostos dentro do pacote raiz |
 | --- | --- | --- |
-| Warlley | `codex/sprint2-atendimentos` | `atendimentos/` |
-| Mateus | `codex/sprint2-cadastros` | `pacientes/`, `profissionais/` |
-| Luiz Gustavo | `codex/sprint2-internacoes` | `quartos/`, `internacoes/` |
+| Warlley | `warlley` | `atendimentos/` |
+| Mateus | `mateus` | `pacientes/`, `profissionais/` |
+| Luiz Gustavo | `luiz` | `quartos/`, `internacoes/` |
 
 ### Mateus: cadastros
 
@@ -57,7 +57,7 @@ Nao iniciar tres projetos Spring Boot separados.
   informada pelo modulo de atendimentos, sem criar uma segunda agenda.
 - Endpoints de pacientes e profissionais, persistencia, validacoes e testes.
 - Implementacoes reais das interfaces de consulta definidas na fundacao.
-- Documentacao e trecho do diagrama em `docs/sprint-2/cadastros.md`.
+- Documentacao e trecho do diagrama em `docs/EntregaMateus.md`.
 
 ### Warlley: atendimentos
 
@@ -81,7 +81,7 @@ Nao iniciar tres projetos Spring Boot separados.
 - Alta efetiva, liberacao da vaga e preservacao dos registros anteriores.
 - Rejeicao de capacidade excedida, inclusive em requisicoes simultaneas.
 - Consulta das internacoes de um paciente, endpoints, persistencia e testes.
-- Documentacao em `docs/sprint-2/internacoes.md`.
+- Documentacao em `docs/EntregaLuiz.md`.
 
 Cada frente entrega suas camadas e testes; nao dividir a equipe por controller,
 service e repository, pois isso tornaria toda funcionalidade dependente dos tres.
