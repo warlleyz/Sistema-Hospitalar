@@ -41,12 +41,11 @@ contexto, abre novamente o mesmo arquivo H2 temporário e consulta os dados
 pela API interna e pela ponte `Cadastros`. O teste de agenda usa os serviços
 reais, inclusive a reserva e sua liberação ao cancelar a consulta.
 
-A verificação limpa da frente executou 15 testes com sucesso. Na suíte
-completa, dois testes de fundação ainda esperam a ausência dos cadastros
-(`503` em vez de `404` para ID ausente). Outros dez testes de atendimentos
-importam implementações simuladas que concorrem com os serviços reais no
-contexto de teste. O isolamento dessas simulações e do cenário sem módulos
-é uma pendência de integração da suíte.
+O comando `clean verify` executou 38 testes sem falhas, incluindo os 15
+da frente de cadastros. Os testes legados de atendimentos selecionam os
+cadastros simulados somente nos seus contextos de teste. O teste da fundação
+isola o cenário de dependência ausente e continua verificando a resposta
+`503 MODULO_INDISPONIVEL`.
 
 ## API de cadastro
 
