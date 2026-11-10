@@ -106,6 +106,22 @@ class ProfissionalApiTest {
         assertThat(profissionais.buscarPorId(Long.MAX_VALUE)).isEmpty();
     }
 
+    @Test
+    void rejeitaCategoriaNumericaEmVezDoNomeDoEnum() throws Exception {
+        String valido = pedido("CRM-MG 601", "CLINICO_GERAL", "Clínica geral", null);
+        long id = cadastrar(valido);
+        for (String categoria : java.util.List.of("1", "\"1\"")) {
+            String invalido = valido.replace("\"CLINICO_GERAL\"", categoria);
+            mvc.perform(post("/profissionais").contentType(APPLICATION_JSON)
+                    .content(invalido.replace("CRM-MG 601", "CRM-MG 602")))
+                .andExpect(status().isBadRequest()).andExpect(jsonPath("$.codigo").value("ENTRADA_INVALIDA"));
+            mvc.perform(put("/profissionais/{id}", id).contentType(APPLICATION_JSON).content(invalido))
+                .andExpect(status().isBadRequest()).andExpect(jsonPath("$.codigo").value("ENTRADA_INVALIDA"));
+        }
+        mvc.perform(get("/profissionais/{id}", id))
+            .andExpect(status().isOk()).andExpect(jsonPath("$.categoria").value("CLINICO_GERAL"));
+    }
+
     private long cadastrar(String corpo) throws Exception {
         var resposta = mvc.perform(post("/profissionais").contentType(APPLICATION_JSON).content(corpo))
             .andExpect(status().isCreated()).andReturn().getResponse();
