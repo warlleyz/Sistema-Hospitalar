@@ -1,5 +1,9 @@
 # Entrega de Warlley: fundação e atendimentos
 
+> Documento da frente individual. Para o estado final integrado, consulte a
+> [entrega consolidada](EntregaSprint2.md), que substitui as pendências históricas
+> de integração e acrescenta histórico conjunto, precisão e tipos de quartos.
+
 Branch: `warlley`. Implementação limitada à fundação compartilhada e à frente de
 atendimentos. Não implementa as tarefas de Mateus ou Luiz, nem conclui a Sprint 2
 inteira. As branches finais dos colegas são `mateus` e `luiz`.

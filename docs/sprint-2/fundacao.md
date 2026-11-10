@@ -89,13 +89,14 @@ atribuídos ao professor. CPF sem pontuação, registro profissional com normali
 consistente e número de quarto único são políticas de integridade recomendadas
 para as frentes responsáveis documentarem e aplicarem.
 
-## Pendências que não bloqueiam atendimentos
+## Decisões consolidadas na entrega
 
-Tipos de quartos continuam sem definição no enunciado: Luiz deve registrar a dúvida
-para o professor e não inventar categorias obrigatórias. O ciclo mínimo proposto de
+O enunciado não define os tipos de quartos. A entrega adota INDIVIDUAL (capacidade
+1) e COLETIVO (capacidade mínima 2), como decisão do grupo, não exigência literal.
+A API infere o tipo pela capacidade quando ele é omitido. O ciclo mínimo proposto de
 internação é ativa (alta efetiva ausente) e encerrada (alta efetiva presente), com
 previsão/alta não anteriores à entrada; sem transferência ou reabertura implícita.
-Luiz deve validar/documentar esse ciclo na sua frente.
+O ciclo foi implementado e testado na integração, preservando o histórico.
 
 ## Erros comuns
 
@@ -111,3 +112,10 @@ combinar especialidade e horário na busca de profissionais. O resultado é uma
 consulta informativa, não uma reserva: o registro do atendimento revalida o horário
 sob bloqueio no banco. A chamada pode retornar 404 para profissional inexistente
 ou 503 enquanto os cadastros não estiverem integrados.
+
+## Estado final
+
+As três frentes estão integradas. O histórico conjunto é consultado em
+`GET /pacientes/{id}/historico`. Tipos estão na migração V302 e a precisão dos
+horários (nove casas decimais) na V102. Consulte a
+[entrega consolidada](../EntregaSprint2.md) para regras finais e validação.

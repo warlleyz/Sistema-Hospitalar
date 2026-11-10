@@ -56,6 +56,12 @@ public class AtendimentoService implements ConsultaDisponibilidade {
     }
     @Transactional(readOnly = true)
     public AtendimentoResposta consultar(String recurso, Long id) { return AtendimentoResposta.de(obter(recurso, id)); }
+    @Transactional(readOnly = true)
+    public List<AtendimentoResposta> historicoDoPaciente(Long pacienteId) {
+        cadastros.paciente(pacienteId);
+        return repository.findByPacienteIdOrderByInicioPrevistoAscIdAsc(pacienteId).stream()
+            .map(AtendimentoResposta::de).toList();
+    }
     public AtendimentoResposta transicionar(String recurso, Long id, Transicao p) {
         agenda.bloquear();
         var a = obter(recurso, id);

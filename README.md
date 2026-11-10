@@ -1,62 +1,88 @@
 # Sistema Hospitalar
 
 Trabalho prático de Programação Modular, Engenharia de Software, PUC Minas.
-Sistema para pacientes, profissionais, consultas, internações, quartos e histórico.
 
-## Estado atual
+## Sprint 2 — entrega integrada
 
-- **Sprint 1:** sete telas estáticas, diagrama inicial e cartões CRC.
-- **Sprint 2 / Warlley:** fundação Spring Boot, modalidades de atendimento,
-  consultas, emergências, cirurgias, estados e agenda persistida implementados.
-- **Mateus:** cadastros de pacientes e profissionais ainda pendentes de integração.
-- **Luiz:** quartos e internações ainda pendentes de integração.
+API REST com pacientes, profissionais da saúde, consultas de rotina e especializadas,
+emergências, cirurgias, quartos, internações, altas e histórico médico consolidado.
+As três frentes estão reunidas na `main`, preservando os commits dos integrantes.
 
-O backend inicia sem os módulos dos colegas. Operações que dependem de seus
-cadastros retornam `503 MODULO_INDISPONIVEL` até que as interfaces sejam
-implementadas. Não existem cadastros fictícios em produção.
+## Executar e testar
 
-## Executar o backend
+Requer **JDK 25**. O Maven Wrapper baixa Maven e dependências no primeiro uso;
+não é necessário instalar Maven nem um servidor de banco separado.
 
-Requer JDK 25 (LTS). No PowerShell:
+No **Git Bash**, a partir da raiz:
+
+```bash
+cd backend
+./mvnw clean verify
+./mvnw spring-boot:run
+```
+
+No **PowerShell**, a partir da raiz:
 
 ```powershell
 cd backend
-.\mvnw.cmd verify
+.\mvnw.cmd clean verify
 .\mvnw.cmd spring-boot:run
 ```
 
-No Linux/macOS: `./mvnw verify` e `./mvnw spring-boot:run`.
-O primeiro uso requer internet para baixar Maven e dependências.
-API em `http://localhost:8080`; banco H2 em arquivo `backend/data/hospital.mv.db`.
-Não é necessário instalar Maven ou um servidor de banco separado.
+O build integrado foi validado com **59 testes, sem falhas ou erros** e gera
+`backend/target/hospital-0.0.1-SNAPSHOT.jar`. Para executar o JAR a partir de `backend/`:
 
-Recursos implementados: `/consultas`, `/emergencias`, `/cirurgias` e
-`/atendimentos/disponibilidade`. Listagens sem registros retornam listas vazias.
-Exemplos e limites estão na [entrega de Warlley](docs/EntregaWarlley.md).
+```bash
+java -jar target/hospital-0.0.1-SNAPSHOT.jar
+```
 
-## Visualizar o protótipo
+API em `http://localhost:8080`. Encerre com `Ctrl+C`. O banco relacional H2 é
+persistido em `backend/data/hospital.mv.db`, ignorado no Git. Os testes usam bancos
+separados e não apagam dados da aplicação. O caminho do banco é relativo: inicie
+sempre de `backend/`. Não há dados demonstrativos previamente cadastrados.
 
-Abra [frontend/index.html](frontend/index.html) no navegador.
-As telas usam dados fictícios e não estão conectadas à API; botões de negócio
-continuam desabilitados. O formulário de quartos não salva informações.
+## Recursos
 
-## Documentação
+| Recurso | Finalidade |
+| --- | --- |
+| `/pacientes` | Cadastro, listagem, consulta e atualização |
+| `/profissionais` | Cadastro, categorias e filtros por especialidade/horário |
+| `/consultas` | Rotina, especializadas, estados e registros clínicos |
+| `/emergencias` | Prioridade e evolução do atendimento |
+| `/cirurgias` | Agendamento, execução e informações pré/pós-operatórias |
+| `/quartos` | Capacidade, tipos, ocupação e vagas |
+| `/internacoes` | Entrada, atualização, alta e histórico por paciente |
+| `/pacientes/{id}/historico` | Histórico médico consolidado |
+| `/atendimentos/disponibilidade` | Disponibilidade de profissional por início previsto |
 
-- [Entrega de Warlley: API, estados, testes e integração](docs/EntregaWarlley.md).
-- [Fundação: tecnologias e contratos para os colegas](docs/sprint-2/fundacao.md).
-- [Plano e responsabilidades da Sprint 2](docs/sprint-2/plano.md).
-- [Propostas iniciais e dúvidas do enunciado](docs/sprint-2/contratos.md).
-- [Diagrama implementado dos atendimentos](docs/sprint-2/diagrama-atendimentos.md).
-- [Estado do protótipo e limitações da Sprint 1](docs/estado-atual.md).
-- [Diagrama inicial SVG](docs/diagrama-classes.svg) e [Mermaid](docs/diagrama-classes.md).
-- [Cartões CRC da Sprint 1](docs/cartoes-crc.docx).
-- [Contribuição e revisão](CONTRIBUTING.md).
+Consulte o [roteiro de demonstração](docs/DemonstracaoSprint2.md) para testar os
+fluxos com cadastros reais. Os corpos JSON e as regras estão nas entregas abaixo.
 
-Os PDFs do enunciado não estão versionados. A documentação distingue exigências,
-decisões técnicas e dúvidas ainda abertas, especialmente tipos de quartos.
+## Documentação de entrega
 
-## Integrantes
+- [Entrega consolidada, decisões e critérios](docs/EntregaSprint2.md).
+- [Diagrama de classes atualizado](docs/diagrama-classes.md).
+- [Fundação e contratos entre módulos](docs/sprint-2/fundacao.md).
+- [Frente de pacientes e profissionais](docs/EntregaMateus.md).
+- [Frente de quartos e internações](docs/EntregaLuiz.md).
+- [Frente de atendimentos](docs/EntregaWarlley.md).
+- [Plano do grupo](docs/sprint-2/plano.md) e [contribuição](CONTRIBUTING.md).
 
-- Warlley Silva Baião Braga: branch `warlley`.
-- Mateus Andrade Motta: branch `mateus`.
-- Luiz Gustavo Moura e Souza: branch `luiz`.
+## Integrantes e contribuições
+
+| Integrante | Desenvolvimento | Contribuição |
+| --- | --- | --- |
+| Warlley Silva Baião Braga | `main` | Fundação, atendimentos, agenda, histórico consolidado e integração final |
+| Mateus Andrade Motta | branch `mateus` | Pacientes, profissionais, categorias e busca por disponibilidade |
+| Luiz Gustavo Moura e Souza | branch `luiz` | Quartos, internações, ocupação, alta e respectivos testes |
+
+## Sprint 1 e limites do escopo
+
+As sete telas em [frontend/](frontend/index.html) permanecem como protótipo estático,
+com dados fictícios e ações desabilitadas; não estão conectadas à API. A Sprint 2
+fornece o backend solicitado pelo enunciado. A entrega consolidada explicita as
+decisões técnicas onde os PDFs não detalham as regras.
+
+Preservados: [diagrama original](docs/sprint-1/diagrama-classes.svg),
+[Mermaid original](docs/sprint-1/diagrama-classes.md), [cartões CRC](docs/cartoes-crc.docx)
+e [diagnóstico da Sprint 1](docs/estado-atual.md).

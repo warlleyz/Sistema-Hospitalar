@@ -4,7 +4,8 @@
 
 Fontes consultadas: `PM_TRABALHOPRATICO-3.pdf` (2 paginas) e
 `SPRINT2_TPPM-2.pdf` (3 paginas), fornecidos pelo grupo e nao versionados.
-Esta documentacao planeja a implementacao; nao declara funcionalidades prontas.
+Este plano registra a divisao original. O resultado integrado esta em
+[EntregaSprint2](../EntregaSprint2.md), com 59 testes aprovados.
 
 O enunciado da Sprint 2 exige:
 
@@ -26,8 +27,7 @@ listada expressamente nas entregas da Sprint 2.
 
 ## Etapa 0: fundacao, antes das branches independentes
 
-Responsavel pela integracao: Warlley. Fundacao implementada na branch `warlley`;
-merge na `main` ainda depende de revisao. Veja [a entrega](../EntregaWarlley.md).
+Responsavel pela integracao: Warlley. Fundacao e frentes integradas na `main`. Veja [a entrega](../EntregaWarlley.md).
 
 - [x] Resolver ou registrar as duvidas de [contratos](contratos.md).
 - [x] Definir Java, Spring Boot e build compativeis e versionar o wrapper.
@@ -37,7 +37,7 @@ merge na `main` ainda depende de revisao. Veja [a entrega](../EntregaWarlley.md)
 - [x] Publicar interfaces de consulta de pacientes e profissionais, incluindo os
       tipos de retorno, para as outras frentes poderem usar simulacoes nos testes.
 - [x] Definir formato comum de erro e estrategia de migracoes, se aplicavel.
-- [ ] Integrar essa base na `main` e comunicar o commit de partida aos tres.
+- [x] Integrar essa base na `main` e comunicar o commit de partida aos tres.
 
 Nao criar classes de dominio vazias como se fossem implementacoes concluidas.
 Nao iniciar tres projetos Spring Boot separados.
@@ -72,12 +72,12 @@ Nao iniciar tres projetos Spring Boot separados.
   e nao compareceu. Rejeitar transicoes incompativeis.
 - Uma unica verificacao de conflitos para atendimentos que reservam horario.
 - Endpoints de consultas e rotas adicionais documentadas para as modalidades.
-- Persistencia, testes e documentacao em `docs/sprint-2/atendimentos.md`.
+- Persistencia, testes e documentacao em `docs/EntregaWarlley.md`.
 
 ### Luiz Gustavo: quartos e internacoes
 
 - Quartos com identificacao, andar, capacidade, situacao e vagas calculadas.
-- Tipos de quartos somente apos esclarecer a lacuna do enunciado.
+- Tipos INDIVIDUAL e COLETIVO, adotados pelo grupo para a lacuna do enunciado.
 - Internacao vinculada a paciente, profissional e quarto, com datas e observacoes.
 - Alta efetiva, liberacao da vaga e preservacao dos registros anteriores.
 - Rejeicao de capacidade excedida, inclusive em requisicoes simultaneas.
@@ -103,19 +103,19 @@ deve continuar consultavel apos alta ou conclusao.
 
 ## Criterios de conclusao
 
-- [ ] Build e testes executam pelo comando documentado, a partir de checkout limpo.
-- [ ] Os cinco caminhos exigidos possuem operacoes e exemplos documentados.
-- [ ] Pacientes e profissionais inexistentes sao rejeitados nos vinculos.
-- [ ] Conflitos de horario do mesmo profissional sao rejeitados.
-- [ ] Consulta especializada exige profissional compativel.
-- [ ] Emergencia informa prioridade e andamento.
-- [ ] Cirurgia nao pode ser concluida sem inicio.
-- [ ] Consulta concluida nao volta a agendada; cancelada nao e concluida diretamente.
-- [ ] Quarto lotado rejeita entrada; alta efetiva libera vaga.
-- [ ] Concorrencia nao permite ultrapassar capacidade ou duplicar reservas.
-- [ ] Historico nao mistura pacientes e preserva atendimentos anteriores.
-- [ ] Banco e decisoes tecnicas estao documentados; segredos nao estao versionados.
-- [ ] Diagrama, codigo, instrucoes de execucao e exemplos da API concordam.
+- [x] Build e testes executam pelo comando documentado, a partir de checkout limpo.
+- [x] Os cinco caminhos exigidos possuem operacoes e exemplos documentados.
+- [x] Pacientes e profissionais inexistentes sao rejeitados nos vinculos.
+- [x] Conflitos de horario do mesmo profissional sao rejeitados.
+- [x] Consulta especializada exige profissional compativel.
+- [x] Emergencia informa prioridade e andamento.
+- [x] Cirurgia nao pode ser concluida sem inicio.
+- [x] Consulta concluida nao volta a agendada; cancelada nao e concluida diretamente.
+- [x] Quarto lotado rejeita entrada; alta efetiva libera vaga.
+- [x] Concorrencia nao permite ultrapassar capacidade ou duplicar reservas.
+- [x] Historico nao mistura pacientes e preserva atendimentos anteriores.
+- [x] Banco e decisoes tecnicas estao documentados; segredos nao estao versionados.
+- [x] Diagrama, codigo, instrucoes de execucao e exemplos da API concordam.
 
-Os criterios globais permanecem abertos ate validar tambem as frentes dos colegas.
-A entrega de Warlley registra separadamente o que ja foi testado.
+Criterios globais verificados na integracao: 59 testes e build limpo aprovados.
+Tipos adotados pelo grupo e limites de escopo estao explicitados na entrega final.
