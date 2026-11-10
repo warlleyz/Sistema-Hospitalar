@@ -3,6 +3,10 @@ package br.edu.pucminas.hospital.pacientes;
 import br.edu.pucminas.hospital.compartilhado.contratos.ConsultaPacientes;
 import br.edu.pucminas.hospital.compartilhado.contratos.PacienteResumo;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -11,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -44,7 +49,7 @@ class PacienteApiTest {
         String invalido = pedido("123x45678901").replace("1995-02-15", "2999-02-15")
             .replace("ana@example.org", "email-invalido").replace("Ana Exemplo", "")
             .replace("(31) 99999-0000", "telefone");
-        for (var requisicao : java.util.List.of(post("/pacientes"), put("/pacientes/{id}", id))) {
+        for (var requisicao : List.of(post("/pacientes"), put("/pacientes/{id}", id))) {
             mvc.perform(requisicao.contentType(APPLICATION_JSON).content(invalido))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.codigo").value("ENTRADA_INVALIDA"))
@@ -80,6 +85,29 @@ class PacienteApiTest {
                 .content(pedido("12345678904")))
             .andExpect(status().isNotFound());
         assertThat(pacientes.buscarPorId(Long.MAX_VALUE)).isEmpty();
+    }
+
+    @Test
+    void cadastrosSimultaneosComOMesmoCpfPersistemUmaUnicaLinha() throws Exception {
+        var largada = new CyclicBarrier(2);
+        var executor = Executors.newFixedThreadPool(2);
+        try {
+            var comMascara = executor.submit(() -> cadastrarSimultaneamente("012.345.678-90", largada));
+            var semMascara = executor.submit(() -> cadastrarSimultaneamente("01234567890", largada));
+            assertThat(List.of(comMascara.get(10, TimeUnit.SECONDS), semMascara.get(10, TimeUnit.SECONDS)))
+                .containsExactlyInAnyOrder(201, 409);
+        } finally {
+            executor.shutdownNow();
+        }
+
+        mvc.perform(get("/pacientes")).andExpect(status().isOk())
+            .andExpect(jsonPath("$[?(@.cpf == '01234567890')]", hasSize(1)));
+    }
+
+    private int cadastrarSimultaneamente(String cpf, CyclicBarrier largada) throws Exception {
+        largada.await(5, TimeUnit.SECONDS);
+        return mvc.perform(post("/pacientes").contentType(APPLICATION_JSON).content(pedido(cpf)))
+            .andReturn().getResponse().getStatus();
     }
 
     private long cadastrar(String cpf) throws Exception {
