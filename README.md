@@ -55,18 +55,14 @@ sempre de `backend/`. Não há dados demonstrativos previamente cadastrados.
 | `/pacientes/{id}/historico` | Histórico médico consolidado |
 | `/atendimentos/disponibilidade` | Disponibilidade de profissional por início previsto |
 
-Consulte o [roteiro de demonstração](docs/DemonstracaoSprint2.md) para testar os
-fluxos com cadastros reais. Os corpos JSON e as regras estão nas entregas abaixo.
+Cadastre primeiro pacientes e profissionais para registrar atendimentos e
+internações. Os IDs utilizados devem ser os retornados pela API. As regras e
+decisões de implementação estão na entrega consolidada.
 
 ## Documentação de entrega
 
 - [Entrega consolidada, decisões e critérios](docs/EntregaSprint2.md).
 - [Diagrama de classes atualizado](docs/diagrama-classes.md).
-- [Fundação e contratos entre módulos](docs/sprint-2/fundacao.md).
-- [Frente de pacientes e profissionais](docs/EntregaMateus.md).
-- [Frente de quartos e internações](docs/EntregaLuiz.md).
-- [Frente de atendimentos](docs/EntregaWarlley.md).
-- [Plano do grupo](docs/sprint-2/plano.md) e [contribuição](CONTRIBUTING.md).
 
 ## Integrantes e contribuições
 
@@ -84,5 +80,4 @@ fornece o backend solicitado pelo enunciado. A entrega consolidada explicita as
 decisões técnicas onde os PDFs não detalham as regras.
 
 Preservados: [diagrama original](docs/sprint-1/diagrama-classes.svg),
-[Mermaid original](docs/sprint-1/diagrama-classes.md), [cartões CRC](docs/cartoes-crc.docx)
-e [diagnóstico da Sprint 1](docs/estado-atual.md).
+[Mermaid original](docs/sprint-1/diagrama-classes.md), [cartões CRC](docs/sprint-1/cartoes-crc.docx).

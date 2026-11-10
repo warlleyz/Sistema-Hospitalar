@@ -1,41 +1,12 @@
 # Como contribuir
 
-## Estado da base
+Use o README para executar a aplicação e `docs/EntregaSprint2.md` para consultar
+as regras e decisões do projeto. O diagrama está em `docs/diagrama-classes.md`.
 
-As telas em `frontend/` sao prototipos estaticos. O backend integrado esta
-implementado em `backend/`; consulte `docs/EntregaSprint2.md` para o estado final.
-Consulte [o plano da Sprint 2](docs/sprint-2/plano.md) antes de implementar.
-O diagrama consolidado esta em `docs/diagrama-classes.md`. O modelo da Sprint 1
-esta em `docs/sprint-1/`, e os CRC originais permanecem em `docs/cartoes-crc.docx`.
+Trabalhe em uma branch própria e descreva no PR o comportamento alterado e os testes
+executados. Preserve a autoria e o histórico dos integrantes. Alterações de contrato
+entre módulos devem ser combinadas com os responsáveis.
 
-## Branches e autoria
-
-1. Warlley prepara e integra o PR de fundacao descrito no plano.
-2. Depois desse merge, cada integrante atualiza a `main` e cria sua branch.
-3. Cada um trabalha no seu modulo, incluindo regras, persistencia e testes.
-4. Alteracoes em contratos ou arquivos compartilhados devem ser combinadas antes.
-5. Abra um PR para a `main`; nao envie funcionalidades diretamente para ela.
-
-Branches sugeridas:
-
-- Warlley: `warlley`.
-- Mateus: `mateus`.
-- Luiz Gustavo: `luiz`.
-
-Cada integrante deve usar sua propria identidade no Git e revisar o codigo que
-entregar, inclusive quando houver assistencia de ferramentas. Faca commits por
-etapa real e verificavel, sem fragmentacao artificial para aumentar contagens.
-Prefira merge que preserve os commits e autores quando isso for compativel com as
-regras do repositorio. Nao reescreva o historico compartilhado.
-
-## Revisao
-
-Use o [modelo de PR](.github/pull_request_template.md). Quem revisa deve conferir
-regras, contratos e resultados dos testes, alem de conflitos textuais. Atualize a
-branch com a `main` antes da revisao final e repita os testes afetados.
-
-Para alterar o prototipo, abra as paginas afetadas no navegador e confira
-navegacao, teclado, larguras estreitas, textos e coerencia dos exemplos. Mantenha
-os botoes de negocio desabilitados enquanto nao houver implementacao real.
-
-Nao versione credenciais, configuracoes pessoais, logs ou arquivos de build.
+Execute `mvnw clean verify` em `backend/` antes da integração. Não edite migrações
+já aplicadas: adicione novas. Não versione banco local, credenciais ou arquivos de
+build. As telas em `frontend/` permanecem protótipos estáticos.

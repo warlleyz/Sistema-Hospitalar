@@ -3,7 +3,7 @@
 ## Resultado e escopo
 
 Integração das frentes de Warlley, Mateus e Luiz na `main`, com os commits originais
-preservados e um único commit novo de integração/correções. API Spring Boot com
+preservados. API Spring Boot com
 as camadas Controller, Service, Repository e Model, DTOs, exceções, persistência
 e testes. As telas da Sprint 1 permanecem estáticas.
 
@@ -112,8 +112,17 @@ por intervalo: ausência de alta é o critério de ocupação ativa.
 
 ## Banco e atualização
 
-H2 em arquivo permite persistência relacional e reprodução local sem servidor
-separado; a justificativa está na fundação. Não constitui plano de produção clínica.
+O banco escolhido é o **H2 relacional em arquivo**. Pacientes, profissionais,
+atendimentos, quartos e internações possuem dados estruturados e vínculos que se
+beneficiam de transações, índices e restrições de integridade. H2 oferece esses
+recursos e persistência após reinício, permitindo aos três integrantes e ao professor
+executar o trabalho sem instalar ou configurar um servidor externo. O modelo usa
+Spring Data JPA; Flyway controla sua evolução e Hibernate valida o esquema.
+
+Na execução normal, os dados ficam em `backend/data/hospital.mv.db`; memória é
+usada somente nos testes que não verificam persistência em arquivo. A configuração
+pode ser sobrescrita por `DB_URL`, `DB_USER` e `DB_PASSWORD`, sem versionar segredos.
+A escolha atende à reprodução acadêmica local; não constitui plano de produção clínica.
 Não editar migrações aplicadas nem apagar banco para atualizar. Flyway aceita
 migrações fora de ordem para incorporar as faixas independentes das frentes.
 
@@ -148,5 +157,5 @@ isolam essa condição explicitamente, sem conflitar com os cadastros reais.
 
 1. Executar os testes pelo wrapper.
 2. Mostrar o [diagrama consolidado](diagrama-classes.md).
-3. Seguir o [roteiro de demonstração](DemonstracaoSprint2.md).
-4. Consultar entregas individuais para autoria e detalhes das frentes.
+3. Demonstrar cadastros, atendimento, internação, alta e consulta do histórico.
+4. Consultar o [README](../README.md) para execução e contribuições dos integrantes.
