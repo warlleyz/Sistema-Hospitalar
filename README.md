@@ -9,7 +9,7 @@ Sistema para pacientes, profissionais, consultas, internações, quartos e hist�
 - **Sprint 2 / Warlley:** fundação Spring Boot, modalidades de atendimento,
   consultas, emergências, cirurgias, estados e agenda persistida implementados.
 - **Mateus:** cadastros de pacientes e profissionais ainda pendentes de integração.
-- **Luiz:** quartos e internações ainda pendentes de integração.
+- **Luiz:** módulos de quartos e internações implementados na branch `luiz`, com controle de vagas, alta, histórico, persistência e testes. 
 
 O backend inicia sem os módulos dos colegas. Operações que dependem de seus
 cadastros retornam `503 MODULO_INDISPONIVEL` até que as interfaces sejam
